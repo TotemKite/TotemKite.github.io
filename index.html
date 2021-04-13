@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Time Bomb</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+	background-image: url("timeBomb.png");
+	background-size:cover;
+	background-attachment:fixed;
+}
+
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 340px;
+  margin-right: 130px;
+}
+
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+</style>
+</head>
+<body>
+<body bgcolor=LightGray>
+<p id="demo"></p>
+
+
+
+<script>
+
+let audio = new Audio('bomb.mp3');
+audio.play();
+// Set the date we're counting down to
+let timeLeft = 14;
+
+// Update the count down every 1 second
+let x = setInterval(function() {
+
+    
+  // Find the distance between now and the count down date
+  timeLeft--;
+
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = timeLeft;
+    
+  // If the count down is over, write some text 
+  if (timeLeft < 0) {
+	document.body.style.backgroundImage = "url('explosion.gif')";
+    document.getElementById("demo").innerHTML = "BOOM";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
